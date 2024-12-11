@@ -1,0 +1,99 @@
+<Page id="page" title="{i18n>title}" backgroundDesign="Transparent" class="backgroundImage">
+        <customHeader >
+            <Bar class="customHeader">
+                <!-- <contentRight>
+                    <Image
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/LTIMindtree_Logo.svg/768px-LTIMindtree_Logo.svg.png?20240418120057"
+                        width="180px"
+                        height="35px"
+                    />
+                </contentRight> -->
+                <contentRight>
+                    <Image
+                        src="https://raw.githubusercontent.com/UHemantLTI/Dataset/main/ltim.png"
+                        width="180px"
+                        height="35px"
+                    />
+                </contentRight>
+                
+                <contentLeft>
+                    <Image
+                        src="https://raw.githubusercontent.com/UHemantLTI/Dataset/main/image%20(1).png"
+                        width="100px"
+                        height="45px"
+                    />
+                </contentLeft>
+            </Bar>
+        </customHeader>    
+        <FlexBox
+				height="70px"
+				alignItems="End"
+				justifyContent="Center">
+            <Title level="H6" text="Test your Prompt Engineering Skills!" textAlign="Center" class="whiteColor"/>
+        </FlexBox>
+        <l:VerticalLayout id="containerLayout" width="100%">
+            <l:BlockLayout id="BlockLayout">
+                <l:BlockLayoutRow>
+                    <l:BlockLayoutCell>
+                        <!-- <Text text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr." /> -->
+                        <Button id="button" text="Select the scenario no." press="onPress1" ariaHasPopup="Menu" />
+                        <TextArea xmlns="sap.m" placeholder="Enter Text" growingMaxLines="7" width="100%" id="scenario" rows="7" class='sapUiSmallMarginTopBottom' value="" editable="false"/>
+                        <Label text="Enter your user prompt" design="Bold" class="whiteColor"/>
+                        <MessageStrip text="An ideal prompt should consists of context, a clear task, and the expected output. " type="Information" showIcon="true"/>
+                        <TextArea placeholder="Please write your prompt" growingMaxLines="7" width="100%" id="prompt_text" rows="9" class="sapUiSmallMarginTopBottom" change="onPromptChange"/>
+                        <Button icon="https://static.thenounproject.com/png/5720375-200.png" text="Call LLM" press="onPress" class="sapUiTinyMarginTop"/>
+
+                        <!-- <FlexBox justifyContent="SpaceAround" width="100%" >
+                            <Button icon="https://static.thenounproject.com/png/5720375-200.png" text="Call LLM" press="onPress"/>
+                            <Button icon="https://www.pngitem.com/pimgs/m/453-4532076_evaluate-icon-white-transparent-hd-png-download.png" text="Evaluate Prompt" press="onEvaluate"/>
+                        </FlexBox> -->
+                    </l:BlockLayoutCell>
+                    <l:BlockLayoutCell>
+                        <Label text="Generated response from ChatGPT4" design="Bold" class="whiteColor" id="generate_output_label"/>
+                        <TextArea placeholder="Generated response from ChatGPT4" growingMaxLines="7" width="100%" id="generate_output" rows="10" class="sapUiSmallMarginTopBottom"/>
+                        <!-- <Button icon="https://www.pngitem.com/pimgs/m/453-4532076_evaluate-icon-white-transparent-hd-png-download.png" text="Evaluate Prompt" press="onEvaluate" class="sapUiTinyMarginBottom" visible="true" id="enable_output_button"/> -->
+                        <Button icon="sap-icon://survey" text="Evaluate Prompt" press="onEvaluate" class="sapUiTinyMarginBottom" visible="true" id="enable_output_button"/>
+                        <FlexBox alignItems="Start" justifyContent="Start" width="100%">
+                            <Label id="evaluate_output_label" text="Prompt Evaluation Score" design="Bold" class="whiteColor sapUiTinyMarginTop" />
+                            <Button icon="sap-icon://sys-help" id="evaluate_output_btn" press="onMessageInformationDialogPress" class="sapUiTinyMarginBegin" ariaHasPopup="Dialog" tooltip="Evalutation Criteria"/>
+                            <Button icon="sap-icon://example" id="example_prompt_btn" press="onSamplePromptDialogPress" class="sapUiTinyMarginBegin" ariaHasPopup="Dialog" tooltip="Example Prompt"/>
+                        </FlexBox>
+                        <!-- <l:VerticalLayout class="sapUiContentPadding"> -->
+                        <FlexBox
+                            height="200px"
+                            alignItems="Start"
+                            justifyContent="Start"
+                            direction="Column">
+                            <l:HorizontalLayout >
+                                <Label text="Clarity" labelFor="RI_clarity" visible="false" id="RI_clarity_label" class="sapUiTinyMarginTop"/>
+                                <RatingIndicator  editable="false"  id="RI_clarity" maxValue="5" class="sapUiTinyMarginBeginEnd" value="" tooltip="Rating Tooltip" visible="false" />
+                            </l:HorizontalLayout>
+                            <l:HorizontalLayout >
+                                <Label text="Relevance" labelFor="RI_relevance" visible="false" id="RI_relevance_label" class="sapUiTinyMarginTop"/>
+                                <RatingIndicator editable="false"   id="RI_relevance" maxValue="5"  class="sapUiTinyMarginBeginEnd" value="" tooltip="Rating Tooltip" visible="false"/>
+                            </l:HorizontalLayout>
+                            <l:HorizontalLayout >
+                                <Label text="Completeness" labelFor="RI_completeness" visible="false" id="RI_completeness_label" class="sapUiTinyMarginTop"/>
+                                <RatingIndicator editable="false"   id="RI_completeness" maxValue="5"  class="sapUiTinyMarginBeginEnd" value="" tooltip="Rating Tooltip" visible="false"/></l:HorizontalLayout>
+                            <l:HorizontalLayout >
+                                <Label text="Creativity" labelFor="RI_creativity" visible="false" id="RI_creativity_label" class="sapUiTinyMarginTop"/>
+                                <RatingIndicator  editable="false"  id="RI_creativity" maxValue="5"  class="sapUiTinyMarginBeginEnd" value="" tooltip="Rating Tooltip" visible="false"/>
+                            </l:HorizontalLayout>
+                            <l:HorizontalLayout >
+                                <Label text="Coherence" labelFor="RI_coherence" visible="false" id="RI_coherence_label" class="sapUiTinyMarginTop"/>
+                                <RatingIndicator editable="false"  id="RI_coherence" maxValue="5"  class="sapUiTinyMarginBeginEnd" value="" tooltip="Rating Tooltip" visible="false"/>
+                            </l:HorizontalLayout>
+                            <l:HorizontalLayout >
+                                <Label text="Total Score" labelFor="RI_total" visible="false" id="RI_total_label" class="sapUiTinyMarginTop"/>
+                                <RatingIndicator editable="false"  id="RI_total" maxValue="5"  class="sapUiTinyMarginBeginEnd" value="" tooltip="Rating Tooltip" visible="false"/>
+                            </l:HorizontalLayout>                            
+                        </FlexBox>
+                        <!-- <TextArea growingMaxLines="7" width="100%" id="evaluate_output" rows="6" editable="false" class= "sapUiSmallMarginTopBottom"/> -->
+                                                <!-- </l:VerticalLayout> -->
+                    </l:BlockLayoutCell>
+                </l:BlockLayoutRow>
+            </l:BlockLayout>
+        </l:VerticalLayout>
+    </Page>
+    
+

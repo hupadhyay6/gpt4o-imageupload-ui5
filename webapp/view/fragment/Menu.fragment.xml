@@ -1,0 +1,36 @@
+<core:FragmentDefinition
+		xmlns="sap.m"
+		xmlns:core="sap.ui.core">
+	<Menu itemSelected="onMenuAction">
+		<MenuItem text="ClientEngagement - 1 "/>
+		<MenuItem text="Client Engagement - 2"/>
+		<MenuItem text="Client Engagement - 3"/>
+		<MenuItem text="Proposal Development - 1"/>
+		<MenuItem text="Proposal Development - 2"/>
+		<MenuItem text="Proposal Development - 3"/>
+		<MenuItem text="Market Research - 1"/>
+		<MenuItem text="Market Research - 2"/>
+		<MenuItem text="Market Research - 3"/>
+		<MenuItem text="Sales Pitch - 1"/>
+		<MenuItem text="Sales Pitch - 2"/>
+		<MenuItem text="Sales Pitch - 3"/>
+		<MenuItem text="Competitive Analysis - 1"/>
+		<MenuItem text="Competitive Analysis - 2"/>
+		<MenuItem text="Competitive Analysis - 3"/>
+		<MenuItem text="IT Strategy - 1"/>
+		<MenuItem text="IT Strategy - 2"/>
+		<MenuItem text="IT Strategy - 3"/>
+		<MenuItem text="Cloud Migration - 1"/>
+		<MenuItem text="Cloud Migration - 2"/>
+		<MenuItem text="Cloud Migration - 3"/>
+		<MenuItem text="AI Enablement - 1"/>
+		<MenuItem text="AI Enablement - 2"/>
+		<MenuItem text="AI Enablement - 3"/>
+		<MenuItem text="Digital Transformation - 1"/>
+		<MenuItem text="Digital Transformation - 2"/>
+		<MenuItem text="Digital Transformation - 3"/>
+		<MenuItem text="IT Modernization - 1"/>
+		<MenuItem text="IT Modernization - 2"/>
+		<MenuItem text="IT Modernization - 3"/>
+	</Menu>
+</core:FragmentDefinition>

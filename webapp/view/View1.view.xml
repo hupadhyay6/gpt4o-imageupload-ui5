@@ -1,0 +1,27 @@
+<mvc:View
+    controllerName="project2.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    xmlns:u="sap.ui.unified"
+    xmlns="sap.m"
+    displayBlock="true"
+    afterInit="onAfterInit"
+>
+    <l:VerticalLayout id="containerLayout" width="100%">
+        <Text text="Upload Image" class="sapUiLargeMarginBegin sapUiLargeMarginTop"/>
+        <u:FileUploader
+            id="fileUploader"
+            name="myFileUpload"
+            uploadUrl="upload/"
+            tooltip="Upload your file to the local server"
+            change="onBrowseConsultantImage"
+            class="hiddenControls sapUiLargeMarginBegin"
+            fileType="jpg,png,jpeg"
+            sendXHR="true"
+        />
+
+        <Text text="Response from GPT-4-o" id="responseLabel" class="sapUiLargeMarginBegin sapUiLargeMarginTop" visible="false"/>
+        <TextArea id="gpt4oResponseTextArea" value="" visible="false" class="sapUiLargeMarginBegin" width="50%"/>
+
+    </l:VerticalLayout>
+</mvc:View>
